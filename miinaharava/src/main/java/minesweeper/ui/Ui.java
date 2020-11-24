@@ -2,7 +2,7 @@ package minesweeper.ui;
 
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
-import minesweeper.Grid;
+import minesweeper.domain.Grid;
 public class Ui {
     static Grid grid = new Grid();
     public static void main(String[] args) {

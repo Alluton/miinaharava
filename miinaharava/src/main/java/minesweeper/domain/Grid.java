@@ -1,4 +1,4 @@
-package minesweeper;
+package minesweeper.domain;
 
 import java.util.Random;
 //0 in grid means no mine, 1 means mine
