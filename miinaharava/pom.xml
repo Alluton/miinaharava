@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mycompany</groupId>
-    <artifactId>miinaharava</artifactId>
+    <artifactId>minesweeper</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
@@ -10,4 +13,69 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+    <pluginRepositories>
+<pluginRepository>
+  <id>central</id>
+  <name>Central Repository</name>
+  <url>https://repo.maven.apache.org/maven2</url>
+  <layout>default</layout>
+  <snapshots>
+    <enabled>false</enabled>
+  </snapshots>
+  <releases>
+    <updatePolicy>never</updatePolicy>
+  </releases>
+</pluginRepository>
+</pluginRepositories>
+
+<repositories>
+ <repository>
+   <id>central</id>
+   <name>Central Repository</name>
+   <url>https://repo.maven.apache.org/maven2</url>
+   <layout>default</layout>
+   <snapshots>
+      <enabled>false</enabled>
+   </snapshots>
+ </repository>
+</repositories>
+
+    <dependencies>
+    	<dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>12.0.2</version>
+	</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.3</version>
+                <configuration>
+                        <mainClass>org.openjfx.App</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.3</version>
+            <executions>
+                <execution>
+                    <id>default-prepare-agent</id>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        </plugins>   
+    </build>
 </project>
