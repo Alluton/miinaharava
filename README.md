@@ -1,12 +1,14 @@
-Miinaharava
+﻿Miinaharava
 
 Sovellus mahdollistaa miinharavan pelaamisen sekä aikaisempien tulosten kirjanpidon.
 
 Dokumentaatio
 
-[Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.odt)
 
-[Vaativuusmäärittely](dokumentaatio/vaativuusmäärittely.md)
+[Vaativuusmäärittely](dokumentaatio/vaativuusmäärittely.odt)
+
+[tuntikirjanpito](dokumentaatio/tuntikirjanpito.odt)
 
 Komentorivitoiminnot
 
