@@ -9,7 +9,7 @@ public class minesweeperTest {
     @Before
     public void setUp(){
         grid=new Grid();
-        grid.createGrid(2, 0);
+        grid.createGrid(2,2, 0);
     }
     @Test
     public void gridExists() {

@@ -1,7 +1,7 @@
 package minesweeper;
-import minesweeper.ui.Ui;
+import minesweeper.ui.GraphicalUi;
 public class Main {
     public static void main(String[] args) {
-        ui.main(args);
+        GraphicalUi.main(args);
     }
 }
