@@ -16,3 +16,8 @@ Käyttöliittymä sisältää kolme osaa:
 
 Käyttöliittymä rakennetaan minesweeper.ui.GraphicalUi luokassa. Peliruutu on ohjelman scene olio. Muut ruudut avautuvat peliruudun päälle alertteina.
 
+Sovelluslogiikka
+
+[Datamalli](https://github.com/Alluton/miinaharava/blob/master/dokumentaatio/datamalli.jpg)
+
+Sovelluksen loogisen datamallin muodostavat luokat grid ja tile.
