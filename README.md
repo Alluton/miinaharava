@@ -9,9 +9,11 @@ Dokumentaatio
 
 [Vaatimusmäärittely](dokumentaatio/Vaativuusmäärittely.md)
 
+[Käyttöohje](dokumentaatio/Käyttöohje.md)
+
 [tuntikirjanpito](dokumentaatio/tuntikirjanpito.odt)
 
-[release linkki](https://github.com/Alluton/miinaharava/releases/tag/viikko5)
+[release linkki](/releases/latest)
 
 Komentorivitoiminnot
 
