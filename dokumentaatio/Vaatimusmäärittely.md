@@ -12,4 +12,12 @@ sovellus aukeaa aloitusnäyttöön, josta valitaan pelikentän asetukset. Täst�
 
 
 Toiminnallisuus:
-Mahdollisuus pelata miinaharavaa eri kokoisilla kentillä ja eri määrillä miinoja. Lisäksi sovellus ylläpitää listaa saavutetuista huipputuloksista. Ajan salliessa mahdollisuus eri käyttäjiin ja pelin tallentamiseen.
+
+Mahdollisuus pelata miinaharavaa eri kokoisilla kentillä ja eri määrillä miinoja. 
+
+Lisäksi sovellus ylläpitää listaa saavutetuista huipputuloksista [ei vielä toteutettu].
+
+Jatkokehitysideoita:
+
+Mahdollisuus käyttäjäkohtaisiin tilastoihin.
+Kesken olevan pelin tallennus.
