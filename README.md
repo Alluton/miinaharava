@@ -5,9 +5,9 @@ Sovellus mahdollistaa miinharavan pelaamisen eri asetuksilla sekä aikaisempien 
 
 Dokumentaatio
 
-[Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.odt)
+[Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
 
-[Vaativuusmäärittely](dokumentaatio/vaativuusmäärittely.odt)
+[Vaativuusmäärittely](dokumentaatio/vaativuusmäärittely.md)
 
 [tuntikirjanpito](dokumentaatio/tuntikirjanpito.odt)
 
