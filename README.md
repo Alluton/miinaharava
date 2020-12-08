@@ -13,7 +13,7 @@ Dokumentaatio
 
 [tuntikirjanpito](dokumentaatio/tuntikirjanpito.odt)
 
-[release linkki](/releases/latest)
+[release linkki](https://github.com/Alluton/miinaharava/releases/latest)
 
 Komentorivitoiminnot
 
