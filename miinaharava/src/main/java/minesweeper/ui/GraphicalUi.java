@@ -17,14 +17,12 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.layout.GridPane;
 import minesweeper.domain.Grid;
 public class GraphicalUi extends Application{
-    Grid grid = new Grid();
+    Grid grid;
     Tile[][] tiles;
-    private int int1;
-    private int int2;
-    private int int3;
-    @Override
-    public void start(Stage stage) {
-        //start up dialog
+    private int xSize;
+    private int ySize;
+    private int minesCount;
+    public void Dialog(){
         Dialog<ArrayList<String>> dialog = new Dialog<>();
         dialog.setTitle("Settings");
         dialog.setContentText("Please enter game settings:");
@@ -57,25 +55,22 @@ public class GraphicalUi extends Application{
                 list.add(verticalSize.getText());
                 list.add(mineCount.getText());
                 return list;
+            }else{
+                System.exit(0);
             }
             return null;
         });
         Optional<ArrayList<String>> result = dialog.showAndWait();
         result.ifPresent(xSizeySize -> {
-            int1=Integer.parseInt(xSizeySize.get(0));
-            int2=Integer.parseInt(xSizeySize.get(1));
-            int3=Integer.parseInt(xSizeySize.get(2));
+            xSize=Integer.parseInt(xSizeySize.get(0));
+            ySize=Integer.parseInt(xSizeySize.get(1));
+            minesCount=Integer.parseInt(xSizeySize.get(2));
         });
-        int xSize=int1;
-        int ySize=int2;
-        int minesCount=int3;
-        grid.createGrid(xSize,ySize, minesCount);
+    }
+    public void PlayMatch(int xSize, int ySize,GridPane gridPanel, int minesCount){
+        grid=new Grid(xSize, ySize, minesCount);
         tiles=new Tile[xSize][ySize];
-        GridPane gridPanel = new GridPane();
-        int BUTTON_PADDING=0;
-        gridPanel.setHgap(BUTTON_PADDING);
-        gridPanel.setVgap(BUTTON_PADDING);
-        for (int i = 0; i < xSize; i++) {
+           for (int i = 0; i < xSize; i++) {
             for (int j = 0; j < ySize; j++) {
                 final int x=i;
                 final int y=j;
@@ -85,23 +80,35 @@ public class GraphicalUi extends Application{
                 gridPanel.add(button, i,j);
                 button.setOnMouseClicked((event) ->{
                     if(event.getButton()==MouseButton.PRIMARY){
-                        grid.generateView(x, y);
-                        int[][] view=grid.getView();
-                        for(int k = 0; k < xSize; k++){
-                            for(int p = 0; p < ySize; p++){
-                                if(view[k][p]>= 0 && grid.isVisited(k,p) == true && grid.hasMine(k, p)==false){
-                                    tiles[k][p].setText(String.valueOf(view[k][p]));
+                        if(!grid.hasMine(x, y)){
+                            grid.generateView(x, y);
+                            int[][] view=grid.getView();
+                            for(int k = 0; k < xSize; k++){
+                                for(int p = 0; p < ySize; p++){
+                                    if(view[k][p]>= 0 && grid.isVisited(k,p) == true && grid.hasMine(k, p)==false){
+                                        tiles[k][p].setText(String.valueOf(view[k][p]));
+                                    }
                                 }
                             }
-                        }
-                        if(grid.checkWin()){
-                            Alert alert = new Alert(AlertType.CONFIRMATION, "Congratulations, you have won the game!"+ "\n" +"Would you like to play again?");
-                            Optional<ButtonType> result2 = alert.showAndWait();
-                            if (result2.isPresent() && result2.get() == ButtonType.OK) {
-                                //
-                            }else{
-                                System.exit(0);
+                            if(grid.checkWin()){
+                                Alert alert = new Alert(AlertType.CONFIRMATION, "Congratulations, you found all the mines and have won the game!"+ "\n" +"Would you like to play again?");
+                                Optional<ButtonType> result2 = alert.showAndWait();
+                                if (result2.isPresent() && result2.get() == ButtonType.OK) {
+                                    Dialog();
+                                    PlayMatch(this.xSize, this.ySize, gridPanel, this.minesCount);
+                                }else{
+                                    System.exit(0);
+                                }
                             }
+                        }else{
+                            Alert alert = new Alert(AlertType.CONFIRMATION, "You clicked a mine and lost the game!"+ "\n" +"Would you like to play again?");
+                                Optional<ButtonType> result2 = alert.showAndWait();
+                                if (result2.isPresent() && result2.get() == ButtonType.OK) {
+                                    Dialog();
+                                    PlayMatch(xSize, ySize, gridPanel, minesCount);
+                                }else{
+                                    System.exit(0);
+                                }
                         }
                     }
                     if(event.getButton()==MouseButton.SECONDARY){
@@ -110,9 +117,19 @@ public class GraphicalUi extends Application{
                 });
             }
         }
+    }
+    @Override
+    public void start(Stage stage) {
+        Dialog();
+        GridPane gridPanel = new GridPane();
+        int BUTTON_PADDING=0;
+        gridPanel.setHgap(BUTTON_PADDING);
+        gridPanel.setVgap(BUTTON_PADDING);
+        PlayMatch(xSize, ySize, gridPanel, minesCount);
         ScrollPane scrollPane = new ScrollPane(gridPanel);
         stage.setScene(new Scene(scrollPane));
         stage.setTitle("Minesweeper");
+        stage.setMaximized(true);
         stage.show();
     }
     public static void main(String[] args) {

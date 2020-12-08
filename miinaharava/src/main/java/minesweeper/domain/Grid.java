@@ -7,11 +7,22 @@ public class Grid {
     private int[][] view;
     private int xSize;
     private int ySize;
+ /**
+ *Array of revealed tiles in grid. 
+ */
     public int[][] visited;
     int minesMarked = 0;
     int tilesRevealed = 0;
     int minesAmount;
-    public void createGrid(int xSize, int ySize, int minesAmount) {
+    /**
+ * Constructor creates grid according to user input
+ * Mines placed randomly according to java.util.random.
+ *
+ * @param xSize User input for grid width.
+ * @param ySize User input for grid height.
+ * @param minesAmount User input for mine amount.
+ */
+    public Grid(int xSize, int ySize, int minesAmount) {
         this.xSize = xSize;
         this.ySize = ySize;
         this.minesAmount = minesAmount;
@@ -29,47 +40,55 @@ public class Grid {
             }
         }
     }
+ /**
+ * Checks tile of coordinates (x,y) for mine.
+ *
+ * @param x x coordinate of grid.
+ * @param y y coordinate of grid.
+ *
+ * @return true if tile contains mine, false otherwise.
+ */
     public boolean hasMine(int x, int y) {
         return grid[x][y] == 1;
     }
-    public int[][] returnGrid() {
-        return grid;
-    }
+ /**
+ * Method calculates the effects of user clicking a tile (x,y).
+ * Arrays visited and view are updated accordingly.
+ * 
+ * @param x x coordinate of grid.
+ * @param y y coordinate of grid.
+ *
+ */
     public void generateView(int x, int y) {
         searchGrid(x, y);
-        //printView();
     }
-    public void markMine(int x, int y) {
-        view[x][y] = -1;
-        printView();
-        minesMarked++;
-    }
+ /**
+ * Checks if game has been won by comparing the sum of tiles revealed and mines to the size of the grid.
+ *
+ * @return true if game has been won, false otherwise.
+ */
     public boolean checkWin() {
         return tilesRevealed + minesAmount == xSize * ySize;
     }
+ /**
+ *Returns view array.
+ * @return Returns view array.
+ */
     public int[][] getView() {
         return view;
     }
-    public boolean isVisited(int x,int y) {
+ /**
+ * Checks tile of coordinates (x,y) if it has been revealed yet.
+ *
+ * @param x x coordinate of grid.
+ * @param y y coordinate of grid.
+ *
+ * @return true if tile has been visited, false otherwise.
+ */
+    public boolean isVisited(int x, int y) {
         return visited[x][y] == 1;
     }
-    public void printView() {
-        System.out.println("Current grid:");
-        System.out.println("* indicates unknown tile, number indicates amount of mines adjacent to the tile and ! indicates marked mine");
-        for (int i = 0; i < ySize; i++) {
-            for (int j = 0; j < xSize; j++) {
-                if (view[i][j] > 0 || (view[i][j] == 0 && visited[i][j] == 1)) {
-                    System.out.print(view[i][j]);
-                } else if (view[i][j] == -1) {
-                    System.out.print("!");
-                } else {
-                    System.out.print("*");
-                }
-            }
-            System.out.println("    ");
-        }
-    }
-    public void searchGrid(int x, int y) {
+    private void searchGrid(int x, int y) {
         if (x >= xSize || y >= ySize || x < 0 || y < 0) {
             return;
         }
@@ -99,14 +118,40 @@ public class Grid {
                 count++;
             }
         }
+        if (x + 1 < xSize && y + 1 < ySize) {
+            if (grid[x + 1][y + 1] == 1) {
+                count++;
+            }
+        }
+        if (x + 1 < xSize && y - 1 >= 0) {
+            if (grid[x + 1][y - 1] == 1) {
+                count++;
+            }
+        }
+        if (x - 1 >= 0 && y + 1 < ySize) {
+            if (grid[x - 1][y + 1] == 1) {
+                count++;
+            }
+        }
+        if (x - 1 >= 0 && y - 1 >= 0) {
+            if (grid[x - 1][y - 1] == 1) {
+                count++;
+            }
+        }
         view[x][y] = count;
         searchGrid(x + 1, y);
         searchGrid(x - 1, y);
         searchGrid(x, y + 1);
         searchGrid(x, y - 1);
     }
-    //following method is only for testing
+ /**
+ * Puts mine to tile (x,y). NOTE: Method is only intended for testing purposes.
+ *
+ * @param x x coordinate of grid.
+ * @param y y coordinate of grid.
+ */
     public void putMine(int x, int y) {
         grid[x][y] = 1;
+        minesAmount++;
     }
 }
