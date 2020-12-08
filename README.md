@@ -7,7 +7,7 @@ Dokumentaatio
 
 [Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
 
-[Vaativuusmäärittely](dokumentaatio/vaativuusmäärittely.md)
+[Vaativuusmäärittely](dokumentaatio/Vaativuusmäärittely.md)
 
 [tuntikirjanpito](dokumentaatio/tuntikirjanpito.odt)
 
