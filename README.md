@@ -7,7 +7,7 @@ Dokumentaatio
 
 [Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
 
-[Vaatimusmäärittely](dokumentaatio/Vaativuusmäärittely.md)
+[Vaatimusmäärittely](dokumentaatio/Vaatimusmäärittely.md)
 
 [Käyttöohje](dokumentaatio/Käyttöohje.md)
 
