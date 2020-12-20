@@ -34,3 +34,7 @@ Jari generoidaan hakemistoon target
 Tiedostoon checkstyle.xml määritellyt tarkistukset suoritetaan komennolla mvn jxr:jxr checkstyle:checkstyle
 
 Mahdolliset virheilmoitukset löytyvät tiedostosta target/site/checkstyle.html
+
+Javadoc generoidaan komennolla
+
+mvn javadoc:javadoc
