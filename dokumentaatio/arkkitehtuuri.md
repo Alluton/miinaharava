@@ -24,3 +24,8 @@ Sovelluksen loogisen datamallin muodostavat luokat grid ja tile.
 # Tietojentallennus
 
 Pakkausen minesweeper.dao luokka MinesweeperFileDao huolehtii tiedon tallentamises ja lukemisesta. Tieto tallenetaan juuressa sijaitsevaan results.txt tiedostoon. Jos tiedostoa ei ole olemassa se luodaan ensin.
+
+# Pelin pelaaminen
+
+[pelin kaavio](https://github.com/Alluton/miinaharava/blob/master/dokumentaatio/sekvenssikaavio.png
+
