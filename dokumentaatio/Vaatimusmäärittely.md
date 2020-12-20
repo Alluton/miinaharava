@@ -1,6 +1,6 @@
-Vaatimusmäärittely
+# Vaatimusmäärittely
 
-Sovelluksen tarkoitus
+# Sovelluksen tarkoitus
 
 Sovelluksen avulla käyttäjä voi pelata miinaharavaa eri asetuksilla. Lisäksi sovellus ylläpitää tilastoja pelatuista peleistä.
 
@@ -11,13 +11,14 @@ Sovelluksen avulla käyttäjä voi pelata miinaharavaa eri asetuksilla. Lisäksi
 sovellus aukeaa aloitusnäyttöön, josta valitaan pelikentän asetukset. Tästä siirrytän pelinäyttöön josta voitettaessa/hävittäessä siirrytään pistenäyttöön.
 
 
-Toiminnallisuus:
+# Toiminnallisuus:
 
 Mahdollisuus pelata miinaharavaa eri kokoisilla kentillä ja eri määrillä miinoja. 
 
 Lisäksi sovellus ylläpitää listaa saavutetuista huipputuloksista [ei vielä toteutettu].
 
-Jatkokehitysideoita:
+# Jatkokehitysideoita:
 
 Mahdollisuus käyttäjäkohtaisiin tilastoihin.
 Kesken olevan pelin tallennus.
+Pelin aloittaminen uudestaan samoilla asetuksilla.
