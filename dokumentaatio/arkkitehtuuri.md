@@ -27,5 +27,5 @@ Pakkausen minesweeper.dao luokka MinesweeperFileDao huolehtii tiedon tallentamis
 
 # Pelin pelaaminen
 
-[pelin kaavio](https://github.com/Alluton/miinaharava/blob/master/dokumentaatio/sekvenssikaavio.png
+[pelin kaavio](https://github.com/Alluton/miinaharava/blob/master/dokumentaatio/sekvenssikaavio.png)
 
