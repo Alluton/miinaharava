@@ -1,9 +1,9 @@
-# miinaharava
+# Miinaharava
 Miinaharava
 
 Sovellus mahdollistaa miinharavan pelaamisen eri asetuksilla sekä aikaisempien tulosten kirjanpidon.
 
-Dokumentaatio
+# Dokumentaatio
 
 [Arkkitehtuurikuvaus](dokumentaatio/arkkitehtuuri.md)
 
@@ -15,7 +15,9 @@ Dokumentaatio
 
 [release linkki](https://github.com/Alluton/miinaharava/releases/latest)
 
-Komentorivitoiminnot
+[Testaus](dokumentaatio/Testaus.md)
+
+# Komentorivitoiminnot
 
 Testit suoritetaan komennolla
 
