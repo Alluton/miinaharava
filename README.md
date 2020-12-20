@@ -11,7 +11,7 @@ Sovellus mahdollistaa miinaharavan pelaamisen eri asetuksilla sekä aikaisempien
 
 [Käyttöohje](dokumentaatio/Käyttöohje.md)
 
-[tuntikirjanpito](dokumentaatio/tuntikirjanpito.odt)
+[Tuntikirjanpito](https://github.com/Alluton/miinaharava/blob/master/dokumentaatio/miinaharava%20tuntikirjanpito%20-%20Sheet1.pdf)
 
 [release linkki](https://github.com/Alluton/miinaharava/releases/latest)
 
