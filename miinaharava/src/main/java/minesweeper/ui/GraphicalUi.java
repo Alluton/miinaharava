@@ -141,7 +141,7 @@ public class GraphicalUi extends Application{
         startTimer();
         grid=new Grid(xSize, ySize, minesCount);
         tiles=new Tile[xSize][ySize];
-        gridPanel.setMinWidth(xSize*60+100);
+        gridPanel.setMinWidth(xSize*50+100);
         gridPanel.getChildren().removeAll(gridPanel.getChildren());
         gridPanel.add(new Label("Timer"),(xSize+ySize)/2+1,0);
         gridPanel.add(timeElapsed,(xSize+ySize)/2+1,1);
@@ -160,14 +160,16 @@ public class GraphicalUi extends Application{
         Collections.sort(times);
         for(int i = 0; i < Math.min(times.size(),20); i++){
             gridPanel.add(new Label(String.valueOf(times.get(i))+"s"),xSize+3,i+1);
-            GridPane.setMargin(gridPanel.getChildren().get(i+5), new Insets(5, 20, 5, 20));
+            //GridPane.setMargin(gridPanel.getChildren().get(i+5), new Insets(5, 20, 5, 20));
         }
         for (int i = 0; i < xSize; i++) {
             for (int j = 0; j < ySize; j++) {
                 final int x=i;
                 final int y=j;
                 Tile button = new Tile(i,j);
-                button.setMinSize(50, 50);
+                button.setMinSize(51, 51);
+                button.setMaxSize(51, 51);
+                button.setStyle("-fx-border-width: 1px; -fx-border-color: #1b1b1c; -fx-font-size: 10px; ");
                 tiles[i][j]=button;
                 gridPanel.add(button, i+2,j+2);
                 button.setOnMouseClicked((event) ->{
@@ -178,7 +180,9 @@ public class GraphicalUi extends Application{
                             for(int k = 0; k < xSize; k++){
                                 for(int p = 0; p < ySize; p++){
                                     if(view[k][p]>= 0 && grid.isVisited(k,p) == true && grid.hasMine(k, p)==false){
-                                        tiles[k][p].setText(String.valueOf(view[k][p]));
+                                        if(!grid.hasMineMarked(k, p)){
+                                            tiles[k][p].setText(String.valueOf(view[k][p]));
+                                        }
                                     }
                                 }
                             }
@@ -226,7 +230,6 @@ public class GraphicalUi extends Application{
     @Override
     public void stop() throws Exception{
         fileDao.save();
-        System.out.println("Results saved");
     }
     @Override
     public void start(Stage stage) throws Exception {

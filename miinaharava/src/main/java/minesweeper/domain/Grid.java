@@ -108,7 +108,7 @@ public class Grid {
  * @return true if game has been won, false otherwise.
  */
     public boolean checkWin() {
-        return tilesRevealed + minesAmount == xSize * ySize;
+        return tilesRevealed + minesAmount == xSize * ySize && minesMarked<=minesAmount;
     }
  /**
  *Returns view array.
