@@ -1,7 +1,7 @@
 # Miinaharava
 Miinaharava
 
-Sovellus mahdollistaa miinharavan pelaamisen eri asetuksilla sekä aikaisempien tulosten kirjanpidon.
+Sovellus mahdollistaa miinaharavan pelaamisen eri asetuksilla sekä aikaisempien tulosten ylläpidon.
 
 # Dokumentaatio
 
