@@ -1,0 +1,17 @@
+#Testausdokumentti
+
+#Yksikkö- ja integraatiotestaus
+
+Ohjelmaa on testatte JUnit avulla tehdyillä yksikkötesteillä, integraatiotesteillä sekä manuaalisella testaamisella.
+
+Testauksen pääpaino on sovelluslogiikan sisältävän minesweeper.domain luokan kaikkien metodien testaaminen yksikkötesteillä ja muutaman pelitilanteen simuloiminen myös. 
+Pelitilanteiden simulointia varten luokassa on metodi putMine.
+
+Lisäksi on muutama testi tiedon tallentamisesta ja lukemisesta vastaavaa minesweeper.dao luokkaa varten.
+
+Testien rivi- ja haarautumakattavuus on yli 90%, ilman käyttöliittymää.
+
+#Järjestelmätestaus
+
+Järjestelmätestaus on suoritettu lataamalla sovellus ja ajamalla se komentoriviltä. Järjestelmätestauksessa on pyritty antamaan kaikkia mahdollisa virheellisiä syötteitä. 
+Järjestelmätestauksessa sovellusta on ajettu useita kertoa, jotta tietojen tallennuksen ja lukemisen toimivuus on voitu varmistaa.
