@@ -7,11 +7,12 @@ public class Grid {
     private int[][] view;
     private int xSize;
     private int ySize;
+    private boolean[][] marked;
+    private int minesMarked = 0;
  /**
  *Array of revealed tiles in grid. 
  */
     public int[][] visited;
-    int minesMarked = 0;
     int tilesRevealed = 0;
     int minesAmount;
     /**
@@ -29,7 +30,8 @@ public class Grid {
         grid = new int[xSize][ySize];
         view = new int[xSize][ySize];
         visited = new int[xSize][ySize];
-        Random rand = new Random();
+        marked = new boolean[xSize][ySize];
+        Random rand = new Random(System.currentTimeMillis());
         int count = 0;
         while (count < minesAmount) {
             int x = rand.nextInt(xSize);
@@ -39,6 +41,44 @@ public class Grid {
                 count++;
             }
         }
+    }
+    /**
+    * Marks tile of coordinates (x,y) for mine.
+    *
+    * @param x x coordinate of grid.
+    * @param y y coordinate of grid.
+    */
+    public void markMine(int x, int y) {
+        marked[x][y] = true;
+        minesMarked++;
+    }
+        /**
+    * Unmarks tile of coordinates (x,y) for mine.
+    *
+    * @param x x coordinate of grid.
+    * @param y y coordinate of grid.
+    */
+    public void unmarkMine(int x, int y) {
+        marked[x][y] = false;
+        minesMarked--;
+    }
+        /**
+    * Checks tile of coordinates (x,y) for mine.
+    *
+    * @param x x coordinate of grid.
+    * @param y y coordinate of grid.'
+    * 
+    * @return  true if tile has mine marked, false otherwise.
+    */
+    public boolean hasMineMarked(int x, int y) {
+        return marked[x][y];
+    }
+    /**
+     *
+     * @return Returns amount of mines marked.
+     */
+    public int returnMinesMarked() {
+        return minesMarked;
     }
  /**
  * Checks tile of coordinates (x,y) for mine.
