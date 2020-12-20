@@ -1,6 +1,6 @@
 Käyttöohje
 
-lataa tiedosto [minesweeper.jar](https://github.com/Alluton/miinaharava/releases/latest)
+Lataa tiedosto [minesweeper.jar](https://github.com/Alluton/miinaharava/releases/latest)
 
 Ohjelma käynnistetään komennolla: java -jar minesweeper.jar
 
