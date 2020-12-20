@@ -13,7 +13,7 @@ Sovellus mahdollistaa miinaharavan pelaamisen eri asetuksilla sekä aikaisempien
 
 [Tuntikirjanpito](https://github.com/Alluton/miinaharava/blob/master/dokumentaatio/miinaharava%20tuntikirjanpito%20-%20Sheet1.pdf)
 
-[release linkki](https://github.com/Alluton/miinaharava/releases/latest)
+[Release linkki](https://github.com/Alluton/miinaharava/releases/latest)
 
 [Testaus](dokumentaatio/Testaus.md)
 
